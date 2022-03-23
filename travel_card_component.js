@@ -6,7 +6,7 @@ const html = `
 }
 
 .card-cont{
-    box-shadow: 0px 3px 23px rgba(0, 0, 0, .16);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
     height: 445px;
     width: 317px;
     border-radius: 6px;
@@ -133,9 +133,6 @@ class TravelCardComponent extends HTMLElement {
     constructor() {
         super();
         this.template = document.createElement('template');
-        // this.fontAwesome = document.createElement('script');
-        // this.fontAwesome.src = 'https://kit.fontawesome.com/991ad745e6.js';
-        // this.fontAwesome.crossOrigin = 'anonymous'
         this.template.innerHTML = html;
         this.shadow = this.attachShadow({ mode: 'open' });
     }
@@ -160,7 +157,6 @@ class TravelCardComponent extends HTMLElement {
     }
     connectedCallback() {
         this.shadow.appendChild(this.template.content.cloneNode(true));
-        //document.querySelector('head').appendChild(this.fontAwesome);
         this.render();
     }
 
